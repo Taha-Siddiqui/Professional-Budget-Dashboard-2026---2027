@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Regional Offices Budget Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.3/chart.umd.min.js"></script>
+</head>
+<body class="app-body">
+
+<header class="app-header">
+  <div class="brand">
+    <span class="brand-seal">BE</span>
+    <div>
+      <h1>Regional Offices Budget Dashboard</h1>
+      <p id="source-status" class="source-status">Loading data source…</p>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button id="refresh-btn" class="ghost-btn" title="Re-fetch from Google Sheets">⟳ Refresh data</button>
+    <span id="user-name" class="user-name"></span>
+    <button id="logout-btn" class="ghost-btn">Sign out</button>
+  </div>
+</header>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <h2>Offices</h2>
+      <input id="office-search" type="text" placeholder="Filter offices…" class="text-input" />
+      <div id="office-groups" class="office-groups">
+        <p class="muted">Loading offices…</p>
+      </div>
+      <div class="sidebar-buttons">
+        <button id="select-none" class="link-btn">Clear</button>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h2>Category</h2>
+      <div id="category-list" class="category-list">
+        <p class="muted">Loading categories…</p>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h2>Search line items</h2>
+      <input id="item-search" type="text" placeholder="e.g. Driver, House Rent…" class="text-input" />
+    </div>
+  </aside>
+
+  <main class="main-panel">
+
+    <div id="error-banner" class="error-banner" hidden></div>
+
+    <section class="stat-row" id="stat-row"></section>
+
+    <div class="view-tabs">
+      <button class="view-tab active" data-view="browse">Browse</button>
+      <button class="view-tab" data-view="compare">Compare offices</button>
+    </div>
+
+    <!-- BROWSE VIEW -->
+    <section id="browse-view" class="view">
+      <div id="office-tables"></div>
+    </section>
+
+    <!-- COMPARE VIEW -->
+    <section id="compare-view" class="view" hidden>
+      <div class="compare-controls">
+        <label for="metric-select">Compare by:</label>
+        <select id="metric-select"></select>
+      </div>
+      <div class="chart-card">
+        <canvas id="compare-chart" height="90"></canvas>
+      </div>
+      <div id="compare-table-wrap"></div>
+    </section>
+
+  </main>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

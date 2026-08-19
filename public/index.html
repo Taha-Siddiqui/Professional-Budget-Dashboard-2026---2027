@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign in — Regional Offices Budget Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="login-body">
+
+  <div class="seal" aria-hidden="true">
+    <svg viewBox="0 0 120 120" width="64" height="64">
+      <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="60" cy="60" r="46" fill="none" stroke="currentColor" stroke-width="1"/>
+      <text x="60" y="56" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="22" fill="currentColor">BE</text>
+      <text x="60" y="76" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" letter-spacing="2" fill="currentColor">2026-27</text>
+    </svg>
+  </div>
+
+  <main class="login-card" role="main">
+    <p class="eyebrow">Regional Offices</p>
+    <h1>Budget Dashboard</h1>
+    <p class="login-sub">Sign in to view budget estimates across offices.</p>
+
+    <form id="login-form" novalidate>
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" autocomplete="username" required />
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required />
+
+      <p id="login-error" class="error-text" hidden></p>
+
+      <button type="submit" id="login-btn">Sign in</button>
+    </form>
+
+    <p class="hint">Demo credentials — <span>admin</span> / <span>viewer</span>, password <span>password123</span></p>
+  </main>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
